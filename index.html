@@ -1,8 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	</head>
-	<body>
-		<h1>meow</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, intitial-scale=1.0" />
+    <title>NoSQL Injection</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>NoSQL injection</h1>
+      <p>
+        NoSQL injection is a less common variety of SQL Injection that can make
+        a backend database return information it wasn't supposed to expose to
+        the user, or destroy the database entirely.
+      </p>
+      <p>
+        If you concatenate user input directly into a database query without
+        sanitizing it, you are vulnerable to NoSQL injection attacks.
+      </p>
+      <p>HOW DOES NoSQLi WORK</p>
+      <div id="input-box">
+        <h3>Look up users here:</h3>
+        <p>
+          asdf
+          <input id="databaseInput"/>
+          a
+        </p>
+        <button type="button" onclick="getMongoResponse()">Submit query</button>
+      </div>
+      <div id="result-box"></div>
+      <script src="js/script.js"></script>
+    </div>
+  </body>
 </html>
