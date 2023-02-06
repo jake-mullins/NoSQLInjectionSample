@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, intitial-scale=1.0" />
-    <title>NoSQL Injection</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <div id="content">
-      <h1>NoSQL injection</h1>
-      <!--Can put your own text here depending on the context-->
-      <!--
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, intitial-scale=1.0" />
+  <title>NoSQL Injection</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="content">
+    <h1>NoSQL injection</h1>
+    <!--Can put your own text here depending on the context-->
+    <!--
         <p>
           NoSQL injection is a variety of SQL Injection that can make
           a backend database return information it wasn't supposed to expose to
@@ -22,18 +23,29 @@
           sanitizing it, you are vulnerable to NoSQL injection attacks.
         </p>
       -->
-      <form id="loginCredentials" method="dialog" onsubmit="submitMongoQuery()">
-        <p>Username:
-          <input name="username" require type="text">
-        </p>
-        <p>Password:
-          <input name="password" require type="text">
-        </p>
-        <button>Submit</button>
-      </form>
-      <div id="query"></div>
-      <div id="response"></div>
-      <script src="js/script.js"></script>
-    </div>
-  </body>
+    <p>
+      For some reason, the developer chose to parse the username and password fields as JSON instead of regular strings,
+      meaning you can inject custom mongoose syntax into the query that the backend sends to Mongo!
+    </p>
+    <p>
+      Users are Abby, Bart, and Carlotta.
+    </p>
+    <p>
+      Try using <code>{"$ne": null}</code> for the password.
+    </p>
+    <form id="loginCredentials" method="dialog" onsubmit="submitMongoQuery()">
+      <p>Username:
+        <input name="username" require type="text">
+      </p>
+      <p>Password:
+        <input name="password" require type="text">
+      </p>
+      <button>Submit</button>
+    </form>
+    <div id="query"></div>
+    <div id="response"></div>
+    <script src="js/script.js"></script>
+  </div>
+</body>
+
 </html>
