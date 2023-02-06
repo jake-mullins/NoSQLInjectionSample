@@ -4,6 +4,14 @@ body {
     background-color: cadetblue;
 }
 
+h3 {
+    margin:0;
+    padding: 0;
+}
+
+/* input { */
+/* } */
+
 #content {
     margin: 1em;
     padding: 2em;
